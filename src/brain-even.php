@@ -7,7 +7,7 @@ use function \cli\prompt;
 
 function isEven($num): bool
 {
-    return ($num % 2 === 0);    
+    return ($num % 2 === 0);
 }
 
 function getRightAnswer($num): string

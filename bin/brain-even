@@ -3,6 +3,7 @@
 <?php
 
 use function \BrainGames\Cli\run;
+use function \BrainGames\BrainEven\playBrainEven;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';
@@ -12,5 +13,5 @@ if (file_exists($autoloadPath1)) {
     require_once $autoloadPath2;
 }
 
-run();
-
+$userName = run('brain-even');
+playBrainEven($userName);

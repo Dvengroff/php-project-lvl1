@@ -16,7 +16,7 @@ function run($gameName)
             break;
         case 'brain-calc':
             line('What is the result of the expression?');
-            break;            
+            break;
     }
     line();
     $name = prompt('May I have your name?', false, " ");

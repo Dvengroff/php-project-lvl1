@@ -16,7 +16,7 @@ function getRightAnswer($a, $b, $operator)
             $result = $a - $b;
             break;
         case '*':
-            $result = $a * $b;;
+            $result = $a * $b;
             break;
     }
     return $result;

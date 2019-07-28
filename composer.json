@@ -2,7 +2,8 @@
     "name": "dvengroff/php-project-lvl1",
     "bin": [
         "bin/brain-games",
-        "bin/brain-even"
+        "bin/brain-even",
+        "bin/brain-calc"
     ],
     "type": "project",
     "authors": [

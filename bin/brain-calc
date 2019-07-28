@@ -3,7 +3,7 @@
 <?php
 
 use function \BrainGames\Cli\run;
-use function \BrainGames\BrainCalc\playBrainCalc;
+use function \BrainGames\Games\BrainCalc\playBrainCalc;
 
 $autoloadPath1 = __DIR__ . '/../../../autoload.php';
 $autoloadPath2 = __DIR__ . '/../vendor/autoload.php';

@@ -18,8 +18,8 @@
     "autoload": {
         "files": [
             "src/cli.php",
-            "src/brain-even.php",
-            "src/brain-calc.php"
+            "src/games/brain-even.php",
+            "src/games/brain-calc.php"
         ]
     },
     "require": {

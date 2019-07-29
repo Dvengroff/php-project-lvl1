@@ -21,15 +21,15 @@ function playBrainCalc()
         $operator = $expressionArr[1];
         $result = 0;
         switch ($operator) {
-        case '+':
-            $result = $a + $b;
-            break;
-        case '-':
-            $result = $a - $b;
-            break;
-        case '*':
-            $result = $a * $b;
-            break;
+            case '+':
+                $result = $a + $b;
+                break;
+            case '-':
+                $result = $a - $b;
+                break;
+            case '*':
+                $result = $a * $b;
+                break;
         }
         return (string) $result;
     };

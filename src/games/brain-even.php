@@ -23,5 +23,5 @@ function playBrainEven()
         }
     };
     
-    run($gameDescription, $task, $correctAnswer);  
+    run($gameDescription, $task, $correctAnswer);
 }

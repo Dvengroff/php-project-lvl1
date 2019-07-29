@@ -2,42 +2,26 @@
 
 namespace BrainGames\Games\BrainEven;
 
-use function \cli\line;
-use function \cli\prompt;
+use function \BrainGames\GameEngine\run;
 
 function isEven($num): bool
 {
     return ($num % 2 === 0);
 }
 
-function getRightAnswer($num): string
+function playBrainEven()
 {
-    if (isEven($num)) {
-        return 'yes';
-    } else {
-        return 'no';
-    }
-}
-
-function playBrainEven($userName)
-{
-    for ($i = 0; $i < 3; $i++) {
-        $nextNum = rand(1, 99);
-        line("Question: {$nextNum}");
-        $userAnswer = prompt('Your answer', false, ": ");
-        $rightAnswer = getRightAnswer($nextNum);
-    
-        if ($userAnswer !== $rightAnswer) {
-            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$rightAnswer}'.");
-            line("Let's try again, {$userName}!");
-            line();
-            return false;
+    $gameDescription = 'Answer "yes" if number even otherwise answer "no".';
+    $task = function () {
+        return rand(1, 99);
+    };
+    $correctAnswer = function ($num) {
+        if (isEven($num)) {
+            return 'yes';
         } else {
-            line('Correct!');
+            return 'no';
         }
-    }
+    };
     
-    line("Congratulations, {$userName}!");
-    line();
-    return true;
+    run($gameDescription, $task, $correctAnswer);  
 }

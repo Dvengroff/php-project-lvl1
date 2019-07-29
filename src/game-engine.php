@@ -5,22 +5,32 @@ namespace BrainGames\GameEngine;
 use function \cli\line;
 use function \cli\prompt;
 
-function run($gameName)
+function run(string $description, $getTask, $getAnswer)
 {
     line('Welcome to the Brain Games!');
-    switch ($gameName) {
-        case 'brain-games':
-            break;
-        case 'brain-even':
-            line('Answer "yes" if number even otherwise answer "no".');
-            break;
-        case 'brain-calc':
-            line('What is the result of the expression?');
-            break;
-    }
+    line($description);
     line();
     $name = prompt('May I have your name?', false, " ");
     line("Hello, %s!", $name);
     line();
-    return $name;
+    
+    for ($i = 0; $i < 3; $i++) {
+        $nextTask = $getTask();
+        line("Question: %s", $nextTask);
+        $userAnswer = prompt('Your answer', false, ": ");
+        $correctAnswer = $getAnswer($nextTask);
+    
+        if ($userAnswer !== $correctAnswer) {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+            line("Let's try again, {$name}!");
+            line();
+            return false;
+        } else {
+            line('Correct!');
+        }
+    }
+    
+    line("Congratulations, {$name}!");
+    line();
+    return true;
 }

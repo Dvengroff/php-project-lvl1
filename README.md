@@ -7,3 +7,7 @@
 ### Brain Games: install & brain-even run
 
 [![asciicast](https://asciinema.org/a/buwn7kBgvRuVo0XL1ylQDHwrO.svg)](https://asciinema.org/a/buwn7kBgvRuVo0XL1ylQDHwrO)
+
+### Brain Games: install & brain-calc run
+
+[![asciicast](https://asciinema.org/a/56aoay1pa10j2n5EQy8pMsYaj.svg)](https://asciinema.org/a/56aoay1pa10j2n5EQy8pMsYaj)

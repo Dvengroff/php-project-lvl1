@@ -4,19 +4,27 @@ namespace BrainGames\Games\BrainPrime;
 
 use function \BrainGames\GameEngine\run;
 
-function isEven($num): bool
+function isPrime($num): bool
 {
-    return ($num % 2 === 0);
+    if ($num < 2) {
+        return false;
+    }
+    for ($i = 2; $i <= floor($num / 2); $i++) {
+        if ($num % $i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function playBrainPrime()
 {
-    $gameDescription = 'Answer "yes" if number even otherwise answer "no".';
+    $gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $task = function () {
         return rand(1, 99);
     };
     $correctAnswer = function ($num) {
-        if (isEven($num)) {
+        if (isPrime($num)) {
             return 'yes';
         } else {
             return 'no';

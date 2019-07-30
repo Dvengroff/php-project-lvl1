@@ -4,33 +4,59 @@ namespace BrainGames\Games\BrainProgression;
 
 use function \BrainGames\GameEngine\run;
 
-function getGcd(int $a, int $b)
+function getProgression(int $first, int $step, int $count)
 {
-    $a = abs($a);
-    $b = abs($b);
-    while ($a !== $b) {
-        if ($a > $b) {
-            $a -= $b;
-        } else {
-            $b -= $a;
+    $result[0] = $first;
+    for ($i = 1; $i < $count; $i++) {
+        $result[$i] = $result[$i-1] + $step;
+    }
+    return $result;
+}
+
+function findElementNumber(array $progression, $element)
+{
+    foreach ($progression as $key => $value) {
+        if ($value === $element) {
+            return $key; 
         }
     }
-    return $a;
+}
+
+function findElementValue(array $progression, int $number)
+{
+    if (($number > 0)
+        && ($number < (count($progression) - 1))
+    ) {
+        $value = ($progression[$number - 1] + $progression[$number + 1]) / 2; 
+    }
+    if ($number === 0) {
+        $step = $progression[$number + 2] - $progression[$number + 1];
+        $value = $progression[$number + 1] - $step;
+    }
+    if ($number === (count($progression) - 1)) {
+        $step = $progression[$number - 1] - $progression[$number - 2];
+        $value = $progression[$number - 1] + $step;
+    }
+    return $value;    
 }
 
 function playBrainProgression()
 {
-    $gameDescription = 'Find the greatest common divisor of given numbers.';
+    $gameDescription = 'What number is missing in the progression?';
     $task = function () {
-        $firstNum = rand(1, 99);
-        $secondNum = rand(1, 99);
-        return "{$firstNum} {$secondNum}";
+        $first = rand(1, 10);
+        $step = rand(1, 10);
+        $count = 10;
+        $progression = getProgression($first, $step, $count);
+        $progression[rand(0, $count -1)] = "..";
+        return implode(' ', $progression);
     };
-    $correctAnswer = function ($numbers) {
-        $numbersArr = explode(' ', $numbers);
-        $a = $numbersArr[0];
-        $b = $numbersArr[1];
-        return (string) getGcd($a, $b);
+    $correctAnswer = function ($progressionString) {
+        $progression = explode(' ', $progressionString);
+        $element = "..";
+        $numberOfElement = findElementNumber($progression, $element);
+        $missingElement = findElementValue($progression, $numberOfElement);
+        return (string) $missingElement;
     };
 
     run($gameDescription, $task, $correctAnswer);

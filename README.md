@@ -19,3 +19,7 @@
 ### Brain Games: install & brain-progression run
 
 [![asciicast](https://asciinema.org/a/DLhUko9VOcLMfAmWzbh5Vbr75.svg)](https://asciinema.org/a/DLhUko9VOcLMfAmWzbh5Vbr75)
+
+### Brain Games: install & brain-prime run
+
+[![asciicast](https://asciinema.org/a/yseexD5V73sAdCiluPcqeOz67.svg)](https://asciinema.org/a/yseexD5V73sAdCiluPcqeOz67)

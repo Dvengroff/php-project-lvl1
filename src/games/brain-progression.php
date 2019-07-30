@@ -8,7 +8,7 @@ function getProgression(int $first, int $step, int $count)
 {
     $result[0] = $first;
     for ($i = 1; $i < $count; $i++) {
-        $result[$i] = $result[$i-1] + $step;
+        $result[$i] = $result[$i - 1] + $step;
     }
     return $result;
 }
@@ -17,7 +17,7 @@ function findElementNumber(array $progression, $element)
 {
     foreach ($progression as $key => $value) {
         if ($value === $element) {
-            return $key; 
+            return $key;
         }
     }
 }
@@ -27,7 +27,7 @@ function findElementValue(array $progression, int $number)
     if (($number > 0)
         && ($number < (count($progression) - 1))
     ) {
-        $value = ($progression[$number - 1] + $progression[$number + 1]) / 2; 
+        $value = ($progression[$number - 1] + $progression[$number + 1]) / 2;
     }
     if ($number === 0) {
         $step = $progression[$number + 2] - $progression[$number + 1];
@@ -37,7 +37,7 @@ function findElementValue(array $progression, int $number)
         $step = $progression[$number - 1] - $progression[$number - 2];
         $value = $progression[$number - 1] + $step;
     }
-    return $value;    
+    return $value;
 }
 
 function playBrainProgression()
@@ -48,7 +48,7 @@ function playBrainProgression()
         $step = rand(1, 10);
         $count = 10;
         $progression = getProgression($first, $step, $count);
-        $progression[rand(0, $count -1)] = "..";
+        $progression[rand(0, $count - 1)] = "..";
         return implode(' ', $progression);
     };
     $correctAnswer = function ($progressionString) {

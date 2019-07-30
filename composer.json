@@ -21,7 +21,8 @@
             "src/cli.php",
             "src/game-engine.php",
             "src/games/brain-even.php",
-            "src/games/brain-calc.php"
+            "src/games/brain-calc.php",
+            "src/games/brain-gcd.php"
         ]
     },
     "require": {

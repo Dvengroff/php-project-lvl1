@@ -15,3 +15,7 @@
 ### Brain Games: install & brain-gcd run
 
 [![asciicast](https://asciinema.org/a/u8Q49kmPGt4tsmJZHNdn7epgb.svg)](https://asciinema.org/a/u8Q49kmPGt4tsmJZHNdn7epgb)
+
+### Brain Games: install & brain-progression run
+
+[![asciicast](https://asciinema.org/a/DLhUko9VOcLMfAmWzbh5Vbr75.svg)](https://asciinema.org/a/DLhUko9VOcLMfAmWzbh5Vbr75)

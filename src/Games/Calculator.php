@@ -1,10 +1,10 @@
 <?php
 
-namespace BrainGames\Games\BrainCalc;
+namespace BrainGames\Games\Calculator;
 
 use function \BrainGames\GameEngine\run;
 
-function playBrainCalc()
+function play()
 {
     $gameDescription = 'What is the result of the expression?';
     $task = function () {

@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\BrainProgression;
+namespace BrainGames\Games\Progression;
 
 use function \BrainGames\GameEngine\run;
 
@@ -40,7 +40,7 @@ function findElementValue(array $progression, int $number)
     return $value;
 }
 
-function playBrainProgression()
+function play()
 {
     $gameDescription = 'What number is missing in the progression?';
     $task = function () {

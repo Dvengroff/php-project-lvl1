@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\BrainPrime;
+namespace BrainGames\Games\Prime;
 
 use function \BrainGames\GameEngine\run;
 
@@ -17,7 +17,7 @@ function isPrime($num): bool
     return true;
 }
 
-function playBrainPrime()
+function play()
 {
     $gameDescription = 'Answer "yes" if given number is prime. Otherwise answer "no".';
     $task = function () {

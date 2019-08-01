@@ -1,6 +1,6 @@
 <?php
 
-namespace BrainGames\Games\BrainEven;
+namespace BrainGames\Games\Even;
 
 use function \BrainGames\GameEngine\run;
 
@@ -9,7 +9,7 @@ function isEven($num): bool
     return ($num % 2 === 0);
 }
 
-function playBrainEven()
+function play()
 {
     $gameDescription = 'Answer "yes" if number even otherwise answer "no".';
     $task = function () {

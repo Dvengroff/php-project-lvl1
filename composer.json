@@ -1,7 +1,6 @@
 {
     "name": "dvengroff/php-project-lvl1",
     "bin": [
-        "bin/brain-games",
         "bin/brain-even",
         "bin/brain-calc",
         "bin/brain-gcd",
@@ -22,7 +21,6 @@
     },
     "autoload": {
         "files": [
-            "src/cli.php",
             "src/game-engine.php",
             "src/games/brain-even.php",
             "src/games/brain-calc.php",

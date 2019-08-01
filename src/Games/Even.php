@@ -4,6 +4,8 @@ namespace BrainGames\Games\Even;
 
 use function \BrainGames\GameEngine\run;
 
+const GAME_DESCRIPTION = 'Answer "yes" if number even otherwise answer "no".';
+
 function isEven($num): bool
 {
     return ($num % 2 === 0);
@@ -11,17 +13,12 @@ function isEven($num): bool
 
 function play()
 {
-    $gameDescription = 'Answer "yes" if number even otherwise answer "no".';
     $task = function () {
         return rand(1, 99);
     };
     $correctAnswer = function ($num) {
-        if (isEven($num)) {
-            return 'yes';
-        } else {
-            return 'no';
-        }
+        return (isEven($num)) ? 'yes' : 'no';
     };
     
-    run($gameDescription, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task, $correctAnswer);
 }

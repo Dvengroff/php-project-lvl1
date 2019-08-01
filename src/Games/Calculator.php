@@ -4,9 +4,10 @@ namespace BrainGames\Games\Calculator;
 
 use function \BrainGames\GameEngine\run;
 
+const GAME_DESCRIPTION = 'What is the result of the expression?';
+
 function play()
 {
-    $gameDescription = 'What is the result of the expression?';
     $task = function () {
         $operators = ['+', '-', "*"];
         $firstNum = rand(1, 99);
@@ -34,5 +35,5 @@ function play()
         return (string) $result;
     };
 
-    run($gameDescription, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task, $correctAnswer);
 }

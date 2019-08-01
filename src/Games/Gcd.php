@@ -25,14 +25,10 @@ function play()
     $task = function () {
         $firstNum = rand(1, 99);
         $secondNum = rand(1, 99);
-        return "{$firstNum} {$secondNum}";
-    };
-    $correctAnswer = function ($numbers) {
-        $numbersArr = explode(' ', $numbers);
-        $a = $numbersArr[0];
-        $b = $numbersArr[1];
-        return (string) getGcd($a, $b);
+        $taskData = "{$firstNum} {$secondNum}";
+        $taskAnswer = getGcd($firstNum, $secondNum);
+        return ['data' => $taskData, 'answer' => (string) $taskAnswer];
     };
 
-    run(GAME_DESCRIPTION, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task);
 }

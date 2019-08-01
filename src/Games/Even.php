@@ -14,11 +14,11 @@ function isEven($num): bool
 function play()
 {
     $task = function () {
-        return rand(1, 99);
-    };
-    $correctAnswer = function ($num) {
-        return (isEven($num)) ? 'yes' : 'no';
+        $num = rand(1, 99);
+        $taskData = "{$num}";
+        $taskAnswer = (isEven($num)) ? 'yes' : 'no';
+        return ['data' => $taskData, 'answer' => $taskAnswer];
     };
     
-    run(GAME_DESCRIPTION, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task);
 }

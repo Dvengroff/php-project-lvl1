@@ -13,27 +13,20 @@ function play()
         $firstNum = rand(1, 99);
         $secondNum = rand(1, 99);
         $operator = $operators[rand(0, count($operators) - 1)];
-        return "{$firstNum} {$operator} {$secondNum}";
-    };
-    $correctAnswer = function ($expression) {
-        $expressionArr = explode(' ', $expression);
-        $a = $expressionArr[0];
-        $b = $expressionArr[2];
-        $operator = $expressionArr[1];
-        $result = 0;
+        $taskData = "{$firstNum} {$operator} {$secondNum}";
         switch ($operator) {
             case '+':
-                $result = $a + $b;
+                $taskAnswer = $firstNum + $secondNum;
                 break;
             case '-':
-                $result = $a - $b;
+                $taskAnswer = $firstNum - $secondNum;
                 break;
             case '*':
-                $result = $a * $b;
+                $taskAnswer = $firstNum * $secondNum;
                 break;
         }
-        return (string) $result;
+        return ['data' => $taskData, 'answer' => (string) $taskAnswer];
     };
 
-    run(GAME_DESCRIPTION, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task);
 }

@@ -5,7 +5,9 @@ namespace BrainGames\GameEngine;
 use function \cli\line;
 use function \cli\prompt;
 
-function run(string $description, $getTask, $getAnswer)
+const ROUNDS_COUNT = 3;
+
+function run(string $description, $getTask)
 {
     line('Welcome to the Brain Games!');
     line($description);
@@ -14,12 +16,12 @@ function run(string $description, $getTask, $getAnswer)
     line("Hello, %s!", $name);
     line();
     
-    for ($i = 0; $i < 3; $i++) {
+    for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
         $nextTask = $getTask();
-        line("Question: %s", $nextTask);
+        line("Question: %s", $nextTask['data']);
+        $correctAnswer = $nextTask['answer'];
         $userAnswer = prompt('Your answer', false, ": ");
-        $correctAnswer = $getAnswer($nextTask);
-    
+
         if ($userAnswer !== $correctAnswer) {
             line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
             line("Let's try again, {$name}!");

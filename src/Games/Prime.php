@@ -22,15 +22,11 @@ function isPrime($num): bool
 function play()
 {
     $task = function () {
-        return rand(1, 99);
-    };
-    $correctAnswer = function ($num) {
-        if (isPrime($num)) {
-            return 'yes';
-        } else {
-            return 'no';
-        }
+        $num = rand(1, 99);
+        $taskData = "{$num}";
+        $taskAnswer = (isPrime($num)) ? 'yes' : 'no';
+        return ['data' => $taskData, 'answer' => $taskAnswer];
     };
     
-    run(GAME_DESCRIPTION, $task, $correctAnswer);
+    run(GAME_DESCRIPTION, $task);
 }

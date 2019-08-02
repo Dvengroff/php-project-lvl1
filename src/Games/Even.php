@@ -15,9 +15,9 @@ function play()
 {
     $task = function () {
         $num = rand(1, 99);
-        $taskData = "{$num}";
-        $taskAnswer = (isEven($num)) ? 'yes' : 'no';
-        return ['data' => $taskData, 'answer' => $taskAnswer];
+        $question = "{$num}";
+        $answer = (isEven($num)) ? 'yes' : 'no';
+        return ['question' => $question, 'answer' => $answer];
     };
     
     run(GAME_DESCRIPTION, $task);

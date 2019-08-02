@@ -25,9 +25,9 @@ function play()
     $task = function () {
         $firstNum = rand(1, 99);
         $secondNum = rand(1, 99);
-        $taskData = "{$firstNum} {$secondNum}";
-        $taskAnswer = getGcd($firstNum, $secondNum);
-        return ['data' => $taskData, 'answer' => (string) $taskAnswer];
+        $question = "{$firstNum} {$secondNum}";
+        $answer = getGcd($firstNum, $secondNum);
+        return ['question' => $question, 'answer' => (string) $answer];
     };
 
     run(GAME_DESCRIPTION, $task);

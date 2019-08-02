@@ -17,13 +17,12 @@ function run(string $description, $getTask)
     line();
     
     for ($i = 1; $i <= ROUNDS_COUNT; $i++) {
-        $nextTask = $getTask();
-        line("Question: %s", $nextTask['data']);
-        $correctAnswer = $nextTask['answer'];
+        ['question' => $question, 'answer' => $answer] = $getTask();
+        line("Question: %s", $question);
         $userAnswer = prompt('Your answer', false, ": ");
 
-        if ($userAnswer !== $correctAnswer) {
-            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$correctAnswer}'.");
+        if ($userAnswer !== $answer) {
+            line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
             line();
             exit();

@@ -5,12 +5,12 @@ namespace BrainGames\Games\Progression;
 use function \BrainGames\GameEngine\run;
 
 const GAME_DESCRIPTION = 'What number is missing in the progression?';
+const PROGRESSION_LENGH = 10;
 
-function getProgression(int $first, int $step, int $count)
+function getProgression(int $first, int $step, int $lengh)
 {
-    $result[0] = $first;
-    for ($i = 1; $i < $count; $i++) {
-        $result[$i] = $result[$i - 1] + $step;
+    for ($i = 0; $i < $lengh; $i++) {
+        $result[$i] = $first + $step * $i;
     }
     return $result;
 }
@@ -20,13 +20,12 @@ function play()
     $task = function () {
         $first = rand(1, 10);
         $step = rand(1, 10);
-        $count = 10;
-        $progression = getProgression($first, $step, $count);
-        $missingElemID = rand(0, $count - 1);
-        $taskAnswer = $progression[$missingElemID];
+        $progression = getProgression($first, $step, PROGRESSION_LENGH);
+        $missingElemID = rand(0, PROGRESSION_LENGH - 1);
+        $answer = $progression[$missingElemID];
         $progression[$missingElemID] = "..";
-        $taskData = implode(' ', $progression);
-        return ['data' => $taskData, 'answer' => (string) $taskAnswer];
+        $question = implode(' ', $progression);
+        return ['question' => $question, 'answer' => (string) $answer];
     };
 
     run(GAME_DESCRIPTION, $task);

@@ -23,9 +23,9 @@ function play()
 {
     $task = function () {
         $num = rand(1, 99);
-        $taskData = "{$num}";
-        $taskAnswer = (isPrime($num)) ? 'yes' : 'no';
-        return ['data' => $taskData, 'answer' => $taskAnswer];
+        $question = "{$num}";
+        $answer = (isPrime($num)) ? 'yes' : 'no';
+        return ['question' => $question, 'answer' => $answer];
     };
     
     run(GAME_DESCRIPTION, $task);

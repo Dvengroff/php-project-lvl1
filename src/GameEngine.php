@@ -25,7 +25,7 @@ function run(string $description, $getTask)
             line("'{$userAnswer}' is wrong answer ;(. Correct answer was '{$answer}'.");
             line("Let's try again, {$name}!");
             line();
-            exit();
+            return;
         } else {
             line('Correct!');
         }
